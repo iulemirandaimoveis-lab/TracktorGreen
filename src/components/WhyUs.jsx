@@ -11,7 +11,7 @@ const REASONS = [
     desc: 'Operadores fora das zonas de perigo. Máquinas teleoperadas em ambientes de risco eliminam acidentes com pessoal em campo.',
     metric: '–40%',
     metricLabel: 'acidentes reportados',
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: TrendingUp,
@@ -19,7 +19,7 @@ const REASONS = [
     desc: 'Operação contínua sem fadiga, pausas mínimas e cobertura de área superior por hora de máquina trabalhada.',
     metric: '3x',
     metricLabel: 'cobertura de área',
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Radio,
@@ -35,7 +35,7 @@ const REASONS = [
     desc: 'Ambientes com agrotóxicos, gases, terrenos instáveis e tráfego intenso — operados remotamente com total segurança.',
     metric: '100%',
     metricLabel: 'operações de risco cobertas',
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: LayoutDashboard,
@@ -43,7 +43,7 @@ const REASONS = [
     desc: 'Um único dashboard para monitorar toda a frota: horas, consumo, alertas, manutenção e desempenho por equipamento.',
     metric: '24/7',
     metricLabel: 'monitoramento ativo',
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Hammer,
@@ -51,7 +51,7 @@ const REASONS = [
     desc: 'Construídas para trabalho pesado em campo: esteiras de alta tração, proteção IP65, refrigeração ativa e estrutura reforçada.',
     metric: 'IP65',
     metricLabel: 'proteção mínima padrão',
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Layers,
@@ -100,8 +100,8 @@ export default function WhyUs() {
         {/* Header */}
         <div ref={ref} className="section-fade mb-14">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: '#2D5A36' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4A8C56', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
               DIFERENCIAIS
             </span>
           </div>
@@ -111,13 +111,13 @@ export default function WhyUs() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#E6E6EA',
+                color: '#F0F0F0',
                 lineHeight: '0.95',
               }}
             >
               Por que
               <br />
-              <span style={{ color: '#4A8C56' }}>Tracktor Green</span>
+              <span style={{ color: '#4CAF50' }}>Tracktor Green</span>
             </h2>
             <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
               Sete argumentos objetivos para substituir operações convencionais
@@ -166,7 +166,7 @@ export default function WhyUs() {
             </div>
             <h3
               className="text-xl font-bold uppercase mb-2"
-              style={{ fontFamily: 'Barlow Condensed', color: '#E6E6EA', letterSpacing: '0.05em' }}
+              style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em' }}
             >
               Base Mecânica Confiável + Camada Tecnológica Própria
             </h3>
@@ -209,7 +209,7 @@ function ReasonCard({ r, index }) {
     <div
       className="card-lift p-6 relative"
       style={{
-        background: '#191F1A',
+        background: '#141414',
         border: '1px solid rgba(45,90,54,0.18)',
         borderRadius: '4px',
       }}
@@ -262,7 +262,7 @@ function ReasonCard({ r, index }) {
 
       <h3
         className="text-base font-bold uppercase mb-2"
-        style={{ fontFamily: 'Barlow Condensed', color: '#E6E6EA', letterSpacing: '0.05em', fontSize: '16px' }}
+        style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em', fontSize: '16px' }}
       >
         {r.title}
       </h3>

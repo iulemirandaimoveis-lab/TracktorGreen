@@ -60,8 +60,8 @@ export default function Telemetry() {
         {/* Section header */}
         <div ref={ref} className="section-fade mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: '#2D5A36' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4A8C56', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
               INTERFACE DE CONTROLE
             </span>
           </div>
@@ -71,13 +71,13 @@ export default function Telemetry() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#E6E6EA',
+                color: '#F0F0F0',
                 lineHeight: '0.95',
               }}
             >
               Controle e
               <br />
-              <span style={{ color: '#4A8C56' }}>Telemetria</span>
+              <span style={{ color: '#4CAF50' }}>Telemetria</span>
             </h2>
             <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
               Monitoramento em tempo real da frota completa. Métricas operacionais,
@@ -97,8 +97,8 @@ export default function Telemetry() {
             style={{ borderBottom: '1px solid rgba(45,90,54,0.2)', background: 'rgba(18,18,18,0.8)' }}
           >
             <div className="flex items-center gap-3">
-              <span className="blink w-2 h-2 rounded-full" style={{ background: '#4A8C56' }} />
-              <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4A8C56', letterSpacing: '0.15em' }}>
+              <span className="blink w-2 h-2 rounded-full" style={{ background: '#4CAF50' }} />
+              <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.15em' }}>
                 TRACKTOR GREEN // CENTRAL DE CONTROLE
               </span>
             </div>
@@ -106,7 +106,7 @@ export default function Telemetry() {
               <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177' }}>
                 {new Date().toLocaleDateString('pt-BR')} — LIVE
               </span>
-              <Wifi size={12} color="#4A8C56" />
+              <Wifi size={12} color="#4CAF50" />
             </div>
           </div>
 
@@ -119,10 +119,10 @@ export default function Telemetry() {
             >
               {/* KPI row */}
               <div className="grid grid-cols-2 gap-2">
-                <KpiCard icon={Activity} label="UNID. ONLINE" value={`${onlineCount}/${FLEET.length}`} color="#4A8C56" />
-                <KpiCard icon={Clock} label="HORAS TOTAIS" value="1576h" color="#4A8C56" />
+                <KpiCard icon={Activity} label="UNID. ONLINE" value={`${onlineCount}/${FLEET.length}`} color="#4CAF50" />
+                <KpiCard icon={Clock} label="HORAS TOTAIS" value="1576h" color="#4CAF50" />
                 <KpiCard icon={Fuel} label="CONS. MÉDIO" value="6.2L/h" color="#FF8A00" />
-                <KpiCard icon={BarChart3} label="EFICIÊNCIA" value="86%" color="#4A8C56" />
+                <KpiCard icon={BarChart3} label="EFICIÊNCIA" value="86%" color="#4CAF50" />
               </div>
 
               {/* Efficiency bar */}
@@ -131,19 +131,19 @@ export default function Telemetry() {
                   <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.1em' }}>
                     EFICIÊNCIA DA FROTA
                   </span>
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4A8C56' }}>86%</span>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50' }}>86%</span>
                 </div>
                 <div style={{ height: '4px', background: 'rgba(43,49,58,0.8)', borderRadius: '2px' }}>
                   <div
                     className="bar-animate"
-                    style={{ height: '4px', width: '86%', background: 'linear-gradient(to right, #1E3A24, #4A8C56)', borderRadius: '2px' }}
+                    style={{ height: '4px', width: '86%', background: 'linear-gradient(to right, #1A3A1A, #4CAF50)', borderRadius: '2px' }}
                   />
                 </div>
               </div>
 
               {/* Alerts */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4A8C56', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   ALERTAS ATIVOS
                 </span>
                 <div className="flex flex-col gap-1.5">
@@ -160,7 +160,7 @@ export default function Telemetry() {
               >
                 <div className="flex justify-between items-center mb-2">
                   <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177', letterSpacing: '0.1em' }}>CONECTIVIDADE IoT</span>
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#4A8C56' }}>SISTEMA ONLINE</span>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#4CAF50' }}>SISTEMA ONLINE</span>
                 </div>
                 <div className="flex gap-2">
                   {['MQTT', 'GPS', '4G/LTE', 'EDGE'].map((p) => (
@@ -171,7 +171,7 @@ export default function Telemetry() {
                         fontSize: '7px',
                         background: 'rgba(45,90,54,0.15)',
                         border: '1px solid rgba(45,90,54,0.3)',
-                        color: '#4A8C56',
+                        color: '#4CAF50',
                         padding: '2px 5px',
                         borderRadius: '2px',
                         letterSpacing: '0.1em',
@@ -192,14 +192,14 @@ export default function Telemetry() {
                   <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.1em' }}>
                     LOCALIZAÇÃO DA FROTA — BRASIL
                   </span>
-                  <MapPin size={10} color="#4A8C56" />
+                  <MapPin size={10} color="#4CAF50" />
                 </div>
                 <MapDisplay tick={tick} />
               </div>
 
               {/* Fleet table */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4A8C56', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   STATUS DA FROTA
                 </span>
                 <div className="flex flex-col gap-1">
@@ -216,7 +216,7 @@ export default function Telemetry() {
               style={{ borderLeft: '1px solid rgba(45,90,54,0.15)' }}
             >
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4A8C56', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   MANUTENÇÃO PREDITIVA
                 </span>
                 <div className="flex flex-col gap-2">
@@ -234,7 +234,7 @@ export default function Telemetry() {
 
               {/* Energy / fuel */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4A8C56', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   CONSUMO ENERGÉTICO
                 </span>
                 <div className="flex flex-col gap-2">
@@ -277,7 +277,7 @@ function KpiCard({ icon: Icon, label, value, color }) {
         <Icon size={10} color={color} />
         <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177', letterSpacing: '0.1em' }}>{label}</span>
       </div>
-      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '22px', fontWeight: 800, color: '#E6E6EA', lineHeight: 1 }}>
+      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '22px', fontWeight: 800, color: '#F0F0F0', lineHeight: 1 }}>
         {value}
       </span>
     </div>
@@ -285,7 +285,7 @@ function KpiCard({ icon: Icon, label, value, color }) {
 }
 
 function AlertRow({ alert }) {
-  const colors = { warn: '#FF8A00', ok: '#4A8C56', info: '#687177' }
+  const colors = { warn: '#FF8A00', ok: '#4CAF50', info: '#687177' }
   const icons = { warn: AlertTriangle, ok: CheckCircle2, info: Activity }
   const Icon = icons[alert.level]
   return (
@@ -307,7 +307,7 @@ function AlertRow({ alert }) {
 }
 
 function FleetRow({ unit }) {
-  const statusColors = { online: '#4A8C56', alert: '#FF8A00', maintenance: '#687177' }
+  const statusColors = { online: '#4CAF50', alert: '#FF8A00', maintenance: '#687177' }
   const statusLabel = { online: 'ONLINE', alert: 'ALERTA', maintenance: 'MANUTENÇÃO' }
   return (
     <div
@@ -351,8 +351,8 @@ function MapDisplay({ tick }) {
     >
       {/* Terrain lines */}
       <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
-        <polyline points="0,80 50,60 120,90 200,50 300,75 400,55 500,70" stroke="#2D5A36" strokeWidth="1" fill="none" />
-        <polyline points="0,120 80,100 150,115 250,90 350,110 450,95 500,105" stroke="#2D5A36" strokeWidth="1" fill="none" />
+        <polyline points="0,80 50,60 120,90 200,50 300,75 400,55 500,70" stroke="rgba(76,175,80,0.35)" strokeWidth="1" fill="none" />
+        <polyline points="0,120 80,100 150,115 250,90 350,110 450,95 500,105" stroke="rgba(76,175,80,0.35)" strokeWidth="1" fill="none" />
       </svg>
 
       {units.map((u, i) => (
@@ -366,7 +366,7 @@ function MapDisplay({ tick }) {
             width: '8px',
             height: '8px',
             borderRadius: '50%',
-            background: u.status === 'online' ? '#4A8C56' : u.status === 'alert' ? '#FF8A00' : '#687177',
+            background: u.status === 'online' ? '#4CAF50' : u.status === 'alert' ? '#FF8A00' : '#687177',
             border: `1px solid ${u.status === 'online' ? '#5CB85C' : u.status === 'alert' ? '#FF8A00' : '#9AA0A6'}`,
             transform: 'translate(-50%,-50%)',
             zIndex: 10,
@@ -376,7 +376,7 @@ function MapDisplay({ tick }) {
 
       {/* Legend */}
       <div className="absolute bottom-2 left-2 flex gap-2">
-        {[['#4A8C56', 'Online'], ['#FF8A00', 'Alerta'], ['#687177', 'Manutenção']].map(([c, l]) => (
+        {[['#4CAF50', 'Online'], ['#FF8A00', 'Alerta'], ['#687177', 'Manutenção']].map(([c, l]) => (
           <div key={l} className="flex items-center gap-1">
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: c }} />
             <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177' }}>{l}</span>
@@ -413,7 +413,7 @@ function MaintenanceRow({ m }) {
 
 function FuelBar({ unit }) {
   const pct = unit.fuel
-  const color = pct > 50 ? '#4A8C56' : pct > 25 ? '#FF8A00' : '#cc3300'
+  const color = pct > 50 ? '#4CAF50' : pct > 25 ? '#FF8A00' : '#cc3300'
   return (
     <div>
       <div className="flex justify-between mb-0.5">
@@ -430,9 +430,9 @@ function FuelBar({ unit }) {
 function MiniStat({ label, value, unit }) {
   return (
     <div>
-      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '20px', fontWeight: 800, color: '#4A8C56', display: 'block', lineHeight: 1 }}>{value}</span>
+      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '20px', fontWeight: 800, color: '#4CAF50', display: 'block', lineHeight: 1 }}>{value}</span>
       <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177', letterSpacing: '0.05em' }}>{unit}</span>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#4A8C56', letterSpacing: '0.08em', display: 'block', marginTop: '2px' }}>{label}</span>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#4CAF50', letterSpacing: '0.08em', display: 'block', marginTop: '2px' }}>{label}</span>
     </div>
   )
 }

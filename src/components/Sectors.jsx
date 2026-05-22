@@ -3,13 +3,13 @@ import { Sun, Wheat, HardHat, Landmark, Network, Factory, Package, Scissors } fr
 
 const SECTORS = [
   { icon: Sun, label: 'Energia Solar', desc: 'Roçagem em parques fotovoltaicos sem risco de dano à infraestrutura', color: '#FF8A00' },
-  { icon: Wheat, label: 'Agricultura', desc: 'Manutenção de pastagens, lavouras e propriedades de médio e grande porte', color: '#4A8C56' },
-  { icon: HardHat, label: 'Construção', desc: 'Obras civis, terraplanagem, compactação e movimentação de materiais', color: '#4A8C56' },
-  { icon: Landmark, label: 'Municípios', desc: 'Gestão pública de manutenção urbana, parques, praças e vias públicas', color: '#4A8C56' },
+  { icon: Wheat, label: 'Agricultura', desc: 'Manutenção de pastagens, lavouras e propriedades de médio e grande porte', color: '#4CAF50' },
+  { icon: HardHat, label: 'Construção', desc: 'Obras civis, terraplanagem, compactação e movimentação de materiais', color: '#4CAF50' },
+  { icon: Landmark, label: 'Municípios', desc: 'Gestão pública de manutenção urbana, parques, praças e vias públicas', color: '#4CAF50' },
   { icon: Network, label: 'Infraestrutura', desc: 'Rodovias, ferrovias, linhas de transmissão e dutos de distribuição', color: '#FF8A00' },
-  { icon: Factory, label: 'Indústria', desc: 'Pátios industriais, movimentação de cargas e áreas de preservação interna', color: '#4A8C56' },
-  { icon: Package, label: 'Logística', desc: 'Armazéns, portos, centros de distribuição e terminais multimodais', color: '#4A8C56' },
-  { icon: Scissors, label: 'Manutenção Territorial', desc: 'Serviços contínuos de roçagem, nivelamento e conservação de áreas verdes', color: '#4A8C56' },
+  { icon: Factory, label: 'Indústria', desc: 'Pátios industriais, movimentação de cargas e áreas de preservação interna', color: '#4CAF50' },
+  { icon: Package, label: 'Logística', desc: 'Armazéns, portos, centros de distribuição e terminais multimodais', color: '#4CAF50' },
+  { icon: Scissors, label: 'Manutenção Territorial', desc: 'Serviços contínuos de roçagem, nivelamento e conservação de áreas verdes', color: '#4CAF50' },
 ]
 
 export default function Sectors() {
@@ -40,8 +40,8 @@ export default function Sectors() {
         {/* Header */}
         <div ref={ref} className="section-fade mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: '#2D5A36' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4A8C56', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
               MERCADOS ATENDIDOS
             </span>
           </div>
@@ -51,13 +51,13 @@ export default function Sectors() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#E6E6EA',
+                color: '#F0F0F0',
                 lineHeight: '0.95',
               }}
             >
               Setores
               <br />
-              <span style={{ color: '#4A8C56' }}>Atendidos</span>
+              <span style={{ color: '#4CAF50' }}>Atendidos</span>
             </h2>
             <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
               Do campo à cidade, da geração de energia à logística industrial —
@@ -96,7 +96,7 @@ export default function Sectors() {
                   style={{
                     fontFamily: 'Barlow Condensed',
                     fontSize: '15px',
-                    color: '#E6E6EA',
+                    color: '#F0F0F0',
                     letterSpacing: '0.05em',
                   }}
                 >
@@ -134,7 +134,7 @@ export default function Sectors() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: '28px',
-                color: '#E6E6EA',
+                color: '#F0F0F0',
                 letterSpacing: '0.05em',
               }}
             >
@@ -151,14 +151,14 @@ export default function Sectors() {
             style={{
               fontFamily: 'Barlow Condensed',
               letterSpacing: '0.12em',
-              background: '#2D5A36',
-              color: '#E6E6EA',
-              border: '1px solid #4A8C56',
+              background: 'rgba(76,175,80,0.35)',
+              color: '#F0F0F0',
+              border: '1px solid #4CAF50',
               borderRadius: '2px',
               fontSize: '14px',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#1E3A24' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = '#2D5A36' }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = '#1A3A1A' }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(76,175,80,0.35)' }}
           >
             Consultar Especialista
           </button>

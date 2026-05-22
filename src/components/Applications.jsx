@@ -15,28 +15,28 @@ const APPS = [
     title: 'Rodovias e Estradas',
     desc: 'Conservação de faixas de domínio, taludes e acostamentos com operação remota. Redução de acidentes com pessoal em pista.',
     tags: ['SAG600', 'SY-1200', 'WZ3CX'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Building2,
     title: 'Loteamentos',
     desc: 'Limpeza e regularização de terrenos, movimentação de solo e compactação de vias em projetos de urbanização.',
     tags: ['SE-35', 'SZ950', 'SY-1200'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Wheat,
     title: 'Grandes Fazendas',
     desc: 'Manutenção de pastagens, carreadores e acessos internos. Integração com gestão agrícola via telemetria de campo.',
     tags: ['TZ-12', 'SAG600', 'SH70'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Factory,
     title: 'Indústrias',
     desc: 'Movimentação de cargas, manutenção de pátios e áreas verdes internas com frotas conectadas e monitoradas em tempo real.',
     tags: ['CPC30', 'SH70', 'SAG600'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Landmark,
@@ -51,14 +51,14 @@ const APPS = [
     title: 'Obras Civis',
     desc: 'Escavação, transporte, compactação e concretagem em um único ecossistema de máquinas gerenciadas remotamente.',
     tags: ['SE-35', 'WZ3CX', 'SZJ35', 'SY-1200'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
   {
     icon: Globe,
     title: 'Áreas Remotas',
     desc: 'Operações em regiões de difícil acesso com conectividade IoT, controle satelital e autonomia de combustível ampliada.',
     tags: ['SAG600', 'YH-500', 'TZ-12'],
-    color: '#4A8C56',
+    color: '#4CAF50',
   },
 ]
 
@@ -92,8 +92,8 @@ export default function Applications() {
         {/* Header */}
         <div ref={ref} className="section-fade mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: '#2D5A36' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4A8C56', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
               APLICAÇÕES DE CAMPO
             </span>
           </div>
@@ -103,13 +103,13 @@ export default function Applications() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#E6E6EA',
+                color: '#F0F0F0',
                 lineHeight: '0.95',
               }}
             >
               Onde a Tracktor
               <br />
-              <span style={{ color: '#4A8C56' }}>Green opera</span>
+              <span style={{ color: '#4CAF50' }}>Green opera</span>
             </h2>
             <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
               Do agronegócio à infraestrutura urbana — nossa frota cobre os principais
@@ -156,7 +156,7 @@ export default function Applications() {
                   className="text-base font-bold uppercase mb-2"
                   style={{
                     fontFamily: 'Barlow Condensed',
-                    color: '#E6E6EA',
+                    color: '#F0F0F0',
                     letterSpacing: '0.06em',
                     fontSize: '17px',
                   }}

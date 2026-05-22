@@ -2,17 +2,18 @@
 
 @theme {
   --color-tg-black: #121212;
-  --color-tg-graphite: #2B313A;
-  --color-tg-green-dark: #1E3A24;
-  --color-tg-green: #2D5A36;
-  --color-tg-green-light: #4A8C56;
-  --color-tg-green-neon: #5CB85C;
+  --color-tg-graphite: #1C1C1C;
+  --color-tg-graphite-mid: #2B313A;
+  --color-tg-green-dark: #1E3A1E;
+  --color-tg-green: #2D6B2D;
+  --color-tg-green-brand: #4CAF50;
+  --color-tg-green-light: #5CB85C;
   --color-tg-gray: #687177;
   --color-tg-gray-light: #9AA0A6;
-  --color-tg-white: #E6E6EA;
+  --color-tg-white: #F0F0F0;
   --color-tg-orange: #FF8A00;
 
-  --font-display: "Barlow Condensed", sans-serif;
+  --font-display: "Barlow Condensed", "Raleway", sans-serif;
   --font-body: "Barlow", sans-serif;
   --font-mono: "Space Mono", monospace;
 }
@@ -103,3 +104,104 @@ body {
   from { width: 0%; }
 }
 .bar-animate { animation: bar-fill 1.2s ease both; }
+
+/* ─── Brand track stripes (caterpillar pattern) ─── */
+/* Horizontal striped divider — matches logo mark texture */
+.brand-stripes {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 6px,
+    rgba(76,175,80,0.12) 6px,
+    rgba(76,175,80,0.12) 7px
+  );
+}
+
+/* Diagonal brand stripe (parallelogram lean) */
+.brand-stripe-diagonal {
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(76,175,80,0.06) 30%,
+    rgba(76,175,80,0.12) 50%,
+    rgba(76,175,80,0.06) 70%,
+    transparent 100%
+  );
+}
+
+/* Brand section separator — two bars like the logo */
+.brand-sep::before,
+.brand-sep::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: linear-gradient(to right, #4CAF50, rgba(76,175,80,0.2), transparent);
+  margin-bottom: 3px;
+}
+.brand-sep::after {
+  height: 1px;
+  background: linear-gradient(to right, rgba(76,175,80,0.4), transparent);
+  margin-bottom: 0;
+}
+
+/* Skewed accent block — like the logo parallelogram */
+.tg-parallelogram {
+  transform: skewX(-12deg);
+}
+.tg-parallelogram > * {
+  transform: skewX(12deg);
+}
+
+/* Green glow on hover */
+.green-glow:hover {
+  box-shadow: 0 0 20px rgba(76,175,80,0.25), 0 0 0 1px rgba(76,175,80,0.4);
+}
+
+/* Track texture overlay (rubber/caterpillar effect) */
+.track-texture {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 18px,
+    rgba(0,0,0,0.15) 18px,
+    rgba(0,0,0,0.15) 20px
+  );
+}
+
+/* Brand keyword ticker */
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker-scroll 28s linear infinite;
+}
+.ticker-inner:hover { animation-play-state: paused; }
+
+/* Number count-up */
+@keyframes count-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.count-in { animation: count-in 0.5s ease both; }
+
+/* Shimmer on dark cards */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.card-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(76,175,80,0.04) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 4s ease infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
