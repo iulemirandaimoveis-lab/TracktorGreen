@@ -58,7 +58,7 @@ export default function About() {
     <section
       id="sobre"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ background: '#0E0E0E' }}
+      style={{ background: 'var(--tg-section-alt)' }}
     >
       {/* Diagonal stripe accent */}
       <div
@@ -81,12 +81,12 @@ export default function About() {
             titleGreen="+ camada tecnológica"
           />
           <div>
-            <p className="text-base leading-relaxed mb-3" style={{ color: '#9AA0A6' }}>
+            <p className="text-base leading-relaxed mb-3" style={{ color: 'var(--tg-text2)' }}>
               TRACKTOR GREEN combina engenharia mecânica robusta com controle remoto avançado,
               telemetria em tempo real e gestão centralizada de frota para modernizar operações
               territoriais em qualquer ambiente severo.
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: '#687177' }}>
+            <p className="text-sm leading-relaxed" style={{ color: 'var(--tg-text3)' }}>
               Nossas máquinas são plataformas operacionais conectadas — não apenas equipamentos.
               Projetadas para ambientes extremos, com operação semi-autônoma e integração
               nativa a sistemas de gestão de campo.
@@ -103,14 +103,14 @@ export default function About() {
             <div
               key={s.value}
               className="flex flex-col items-center py-8 px-4"
-              style={{ background: '#0E0E0E' }}
+              style={{ background: 'var(--tg-section-alt)' }}
             >
               <span
                 style={{
                   fontFamily: '"Barlow Condensed", sans-serif',
                   fontSize: '52px',
                   fontWeight: 900,
-                  color: '#4CAF50',
+                  color: 'var(--tg-green)',
                   lineHeight: 1,
                 }}
               >
@@ -121,7 +121,7 @@ export default function About() {
                   fontFamily: '"Barlow Condensed", sans-serif',
                   fontSize: '12px',
                   fontWeight: 700,
-                  color: '#F0F0F0',
+                  color: 'var(--tg-text0)',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
                   marginTop: '4px',
@@ -129,7 +129,7 @@ export default function About() {
               >
                 {s.label}
               </span>
-              <span style={{ fontFamily: '"Space Mono"', fontSize: '8px', color: '#687177', marginTop: '2px' }}>
+              <span style={{ fontFamily: '"Space Mono"', fontSize: '8px', color: 'var(--tg-text3)', marginTop: '2px' }}>
                 {s.sub}
               </span>
             </div>
@@ -145,8 +145,8 @@ export default function About() {
                 key={p.key}
                 className="card-lift card-shimmer relative p-7"
                 style={{
-                  background: '#141414',
-                  border: '1px solid rgba(76,175,80,0.15)',
+                  background: 'var(--tg-bg2)',
+                  border: '1px solid var(--tg-border)',
                   borderRadius: '3px',
                   overflow: 'hidden',
                 }}
@@ -222,7 +222,7 @@ export default function About() {
                     fontFamily: '"Barlow Condensed", sans-serif',
                     fontSize: '20px',
                     fontWeight: 800,
-                    color: '#F0F0F0',
+                    color: 'var(--tg-text0)',
                     textTransform: 'uppercase',
                     letterSpacing: '0.05em',
                     marginBottom: '10px',
@@ -231,7 +231,7 @@ export default function About() {
                   {p.title}
                 </h3>
 
-                <p style={{ fontFamily: '"Barlow"', fontSize: '13px', lineHeight: '1.6', color: '#9AA0A6' }}>
+                <p style={{ fontFamily: '"Barlow"', fontSize: '13px', lineHeight: '1.6', color: 'var(--tg-text2)' }}>
                   {p.desc}
                 </p>
               </div>

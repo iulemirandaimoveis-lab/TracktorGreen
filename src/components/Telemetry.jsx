@@ -45,23 +45,20 @@ export default function Telemetry() {
     <section
       id="telemetria"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ background: '#0A0D0A' }}
+      style={{ background: 'var(--tg-bg0)' }}
     >
-      {/* Dashboard grid bg */}
       <div className="absolute inset-0 dashboard-grid opacity-60 pointer-events-none" />
 
-      {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(45,90,54,0.08) 0%, transparent 70%)' }}
       />
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        {/* Section header */}
         <div ref={ref} className="section-fade mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green-strong)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.2em' }}>
               INTERFACE DE CONTROLE
             </span>
           </div>
@@ -71,15 +68,15 @@ export default function Telemetry() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#F0F0F0',
+                color: 'var(--tg-text0)',
                 lineHeight: '0.95',
               }}
             >
               Controle e
               <br />
-              <span style={{ color: '#4CAF50' }}>Telemetria</span>
+              <span style={{ color: 'var(--tg-green)' }}>Telemetria</span>
             </h2>
-            <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
+            <p className="max-w-md text-sm leading-relaxed" style={{ color: 'var(--tg-text2)' }}>
               Monitoramento em tempo real da frota completa. Métricas operacionais,
               alertas e localização — tudo em um único painel de controle.
             </p>
@@ -89,24 +86,24 @@ export default function Telemetry() {
         {/* DASHBOARD MOCK */}
         <div
           className="rounded border overflow-hidden"
-          style={{ border: '1px solid rgba(45,90,54,0.3)', background: 'rgba(12,15,12,0.95)' }}
+          style={{ border: '1px solid var(--tg-border)', background: 'var(--tg-bg1)' }}
         >
           {/* Dashboard topbar */}
           <div
             className="flex items-center justify-between px-4 py-2.5"
-            style={{ borderBottom: '1px solid rgba(45,90,54,0.2)', background: 'rgba(18,18,18,0.8)' }}
+            style={{ borderBottom: '1px solid var(--tg-border)', background: 'var(--tg-bg2)' }}
           >
             <div className="flex items-center gap-3">
-              <span className="blink w-2 h-2 rounded-full" style={{ background: '#4CAF50' }} />
-              <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.15em' }}>
+              <span className="blink w-2 h-2 rounded-full" style={{ background: 'var(--tg-green)' }} />
+              <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.15em' }}>
                 TRACKTOR GREEN // CENTRAL DE CONTROLE
               </span>
             </div>
             <div className="flex items-center gap-4">
-              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177' }}>
+              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)' }}>
                 {new Date().toLocaleDateString('pt-BR')} — LIVE
               </span>
-              <Wifi size={12} color="#4CAF50" />
+              <Wifi size={12} color="var(--tg-green)" />
             </div>
           </div>
 
@@ -115,7 +112,7 @@ export default function Telemetry() {
             {/* LEFT: KPIs + alerts */}
             <div
               className="p-5 flex flex-col gap-4"
-              style={{ borderRight: '1px solid rgba(45,90,54,0.15)' }}
+              style={{ borderRight: '1px solid var(--tg-border)' }}
             >
               {/* KPI row */}
               <div className="grid grid-cols-2 gap-2">
@@ -128,22 +125,22 @@ export default function Telemetry() {
               {/* Efficiency bar */}
               <div>
                 <div className="flex justify-between mb-1.5">
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.1em' }}>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.1em' }}>
                     EFICIÊNCIA DA FROTA
                   </span>
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50' }}>86%</span>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)' }}>86%</span>
                 </div>
-                <div style={{ height: '4px', background: 'rgba(43,49,58,0.8)', borderRadius: '2px' }}>
+                <div style={{ height: '4px', background: 'var(--tg-bg3)', borderRadius: '2px' }}>
                   <div
                     className="bar-animate"
-                    style={{ height: '4px', width: '86%', background: 'linear-gradient(to right, #1A3A1A, #4CAF50)', borderRadius: '2px' }}
+                    style={{ height: '4px', width: '86%', background: 'linear-gradient(to right, var(--tg-green-mid), var(--tg-green))', borderRadius: '2px' }}
                   />
                 </div>
               </div>
 
               {/* Alerts */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   ALERTAS ATIVOS
                 </span>
                 <div className="flex flex-col gap-1.5">
@@ -156,11 +153,11 @@ export default function Telemetry() {
               {/* IoT connectivity */}
               <div
                 className="p-3"
-                style={{ background: 'rgba(43,49,58,0.4)', border: '1px solid rgba(45,90,54,0.15)', borderRadius: '2px' }}
+                style={{ background: 'var(--tg-bg4)', border: '1px solid var(--tg-border)', borderRadius: '2px' }}
               >
                 <div className="flex justify-between items-center mb-2">
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177', letterSpacing: '0.1em' }}>CONECTIVIDADE IoT</span>
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#4CAF50' }}>SISTEMA ONLINE</span>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)', letterSpacing: '0.1em' }}>CONECTIVIDADE IoT</span>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-green)' }}>SISTEMA ONLINE</span>
                 </div>
                 <div className="flex gap-2">
                   {['MQTT', 'GPS', '4G/LTE', 'EDGE'].map((p) => (
@@ -169,9 +166,9 @@ export default function Telemetry() {
                       style={{
                         fontFamily: 'Space Mono',
                         fontSize: '7px',
-                        background: 'rgba(45,90,54,0.15)',
-                        border: '1px solid rgba(45,90,54,0.3)',
-                        color: '#4CAF50',
+                        background: 'var(--tg-green-dim)',
+                        border: '1px solid var(--tg-border)',
+                        color: 'var(--tg-green)',
                         padding: '2px 5px',
                         borderRadius: '2px',
                         letterSpacing: '0.1em',
@@ -186,20 +183,18 @@ export default function Telemetry() {
 
             {/* CENTER: Map + fleet */}
             <div className="p-5 flex flex-col gap-4">
-              {/* Map mock */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.1em' }}>
+                  <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.1em' }}>
                     LOCALIZAÇÃO DA FROTA — BRASIL
                   </span>
-                  <MapPin size={10} color="#4CAF50" />
+                  <MapPin size={10} color="var(--tg-green)" />
                 </div>
                 <MapDisplay tick={tick} />
               </div>
 
-              {/* Fleet table */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   STATUS DA FROTA
                 </span>
                 <div className="flex flex-col gap-1">
@@ -213,10 +208,10 @@ export default function Telemetry() {
             {/* RIGHT: Machine detail + predictive */}
             <div
               className="p-5 flex flex-col gap-4"
-              style={{ borderLeft: '1px solid rgba(45,90,54,0.15)' }}
+              style={{ borderLeft: '1px solid var(--tg-border)' }}
             >
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   MANUTENÇÃO PREDITIVA
                 </span>
                 <div className="flex flex-col gap-2">
@@ -232,9 +227,8 @@ export default function Telemetry() {
                 </div>
               </div>
 
-              {/* Energy / fuel */}
               <div>
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
                   CONSUMO ENERGÉTICO
                 </span>
                 <div className="flex flex-col gap-2">
@@ -244,10 +238,9 @@ export default function Telemetry() {
                 </div>
               </div>
 
-              {/* Summary stats */}
               <div
                 className="p-3 mt-auto"
-                style={{ background: 'rgba(45,90,54,0.08)', border: '1px solid rgba(45,90,54,0.2)', borderRadius: '2px' }}
+                style={{ background: 'var(--tg-green-dim)', border: '1px solid var(--tg-border)', borderRadius: '2px' }}
               >
                 <div className="grid grid-cols-3 gap-2 text-center">
                   <MiniStat label="TOTAL HRS" value="1576" unit="h" />
@@ -268,16 +261,16 @@ function KpiCard({ icon: Icon, label, value, color }) {
     <div
       className="p-3"
       style={{
-        background: 'rgba(43,49,58,0.4)',
-        border: `1px solid rgba(45,90,54,0.15)`,
+        background: 'var(--tg-bg4)',
+        border: '1px solid var(--tg-border)',
         borderRadius: '2px',
       }}
     >
       <div className="flex items-center gap-1.5 mb-1.5">
         <Icon size={10} color={color} />
-        <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177', letterSpacing: '0.1em' }}>{label}</span>
+        <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-text3)', letterSpacing: '0.1em' }}>{label}</span>
       </div>
-      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '22px', fontWeight: 800, color: '#F0F0F0', lineHeight: 1 }}>
+      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '22px', fontWeight: 800, color: 'var(--tg-text0)', lineHeight: 1 }}>
         {value}
       </span>
     </div>
@@ -292,16 +285,16 @@ function AlertRow({ alert }) {
     <div
       className="flex items-start gap-2 p-2"
       style={{
-        background: alert.level === 'warn' ? 'rgba(255,138,0,0.06)' : 'rgba(43,49,58,0.4)',
+        background: alert.level === 'warn' ? 'rgba(255,138,0,0.06)' : 'var(--tg-bg4)',
         border: `1px solid ${colors[alert.level]}20`,
         borderRadius: '2px',
       }}
     >
       <Icon size={10} color={colors[alert.level]} className="mt-0.5 flex-shrink-0" />
       <div className="flex-1 min-w-0">
-        <p style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#9AA0A6', lineHeight: '1.5' }}>{alert.msg}</p>
+        <p style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text2)', lineHeight: '1.5' }}>{alert.msg}</p>
       </div>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177', flexShrink: 0 }}>{alert.time}</span>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)', flexShrink: 0 }}>{alert.time}</span>
     </div>
   )
 }
@@ -312,14 +305,14 @@ function FleetRow({ unit }) {
   return (
     <div
       className="flex items-center gap-2 px-2 py-1.5"
-      style={{ background: 'rgba(43,49,58,0.3)', border: '1px solid rgba(45,90,54,0.1)', borderRadius: '2px' }}
+      style={{ background: 'var(--tg-bg4)', border: '1px solid var(--tg-border)', borderRadius: '2px' }}
     >
       <span
         className={unit.status === 'online' ? 'blink' : ''}
         style={{ width: '5px', height: '5px', borderRadius: '50%', background: statusColors[unit.status], flexShrink: 0 }}
       />
-      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#9AA0A6', flex: 1 }}>{unit.model}</span>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177', flex: 2, overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text2)', flex: 1 }}>{unit.model}</span>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-text3)', flex: 2, overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis' }}>
         {unit.location}
       </span>
       <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: statusColors[unit.status], flexShrink: 0 }}>
@@ -344,12 +337,11 @@ function MapDisplay({ tick }) {
       className="relative dashboard-grid overflow-hidden"
       style={{
         height: '160px',
-        background: 'rgba(10,13,10,0.8)',
-        border: '1px solid rgba(45,90,54,0.2)',
+        background: 'var(--tg-bg1)',
+        border: '1px solid var(--tg-border)',
         borderRadius: '2px',
       }}
     >
-      {/* Terrain lines */}
       <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
         <polyline points="0,80 50,60 120,90 200,50 300,75 400,55 500,70" stroke="rgba(76,175,80,0.35)" strokeWidth="1" fill="none" />
         <polyline points="0,120 80,100 150,115 250,90 350,110 450,95 500,105" stroke="rgba(76,175,80,0.35)" strokeWidth="1" fill="none" />
@@ -374,12 +366,11 @@ function MapDisplay({ tick }) {
         />
       ))}
 
-      {/* Legend */}
       <div className="absolute bottom-2 left-2 flex gap-2">
         {[['#4CAF50', 'Online'], ['#FF8A00', 'Alerta'], ['#687177', 'Manutenção']].map(([c, l]) => (
           <div key={l} className="flex items-center gap-1">
             <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: c }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177' }}>{l}</span>
+            <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-text3)' }}>{l}</span>
           </div>
         ))}
       </div>
@@ -392,19 +383,19 @@ function MaintenanceRow({ m }) {
     <div
       className="flex items-center justify-between gap-2 px-2 py-1.5"
       style={{
-        background: m.ok ? 'rgba(43,49,58,0.3)' : 'rgba(255,138,0,0.06)',
-        border: `1px solid ${m.ok ? 'rgba(45,90,54,0.1)' : 'rgba(255,138,0,0.2)'}`,
+        background: m.ok ? 'var(--tg-bg4)' : 'rgba(255,138,0,0.06)',
+        border: `1px solid ${m.ok ? 'var(--tg-border)' : 'rgba(255,138,0,0.2)'}`,
         borderRadius: '2px',
       }}
     >
       <div className="flex items-center gap-1.5">
-        <Wrench size={9} color={m.ok ? '#687177' : '#FF8A00'} />
+        <Wrench size={9} color={m.ok ? 'var(--tg-text3)' : '#FF8A00'} />
         <div>
-          <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#9AA0A6', display: 'block' }}>{m.name}</span>
-          <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177' }}>{m.task}</span>
+          <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text2)', display: 'block' }}>{m.name}</span>
+          <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-text3)' }}>{m.task}</span>
         </div>
       </div>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: m.ok ? '#687177' : '#FF8A00', flexShrink: 0 }}>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: m.ok ? 'var(--tg-text3)' : '#FF8A00', flexShrink: 0 }}>
         {m.due}
       </span>
     </div>
@@ -417,10 +408,10 @@ function FuelBar({ unit }) {
   return (
     <div>
       <div className="flex justify-between mb-0.5">
-        <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177' }}>{unit.model}</span>
+        <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)' }}>{unit.model}</span>
         <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color }}>🔋 {pct}%</span>
       </div>
-      <div style={{ height: '3px', background: 'rgba(43,49,58,0.8)', borderRadius: '2px' }}>
+      <div style={{ height: '3px', background: 'var(--tg-bg3)', borderRadius: '2px' }}>
         <div style={{ height: '3px', width: `${pct}%`, background: color, borderRadius: '2px', transition: 'width 1s ease' }} />
       </div>
     </div>
@@ -430,9 +421,9 @@ function FuelBar({ unit }) {
 function MiniStat({ label, value, unit }) {
   return (
     <div>
-      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '20px', fontWeight: 800, color: '#4CAF50', display: 'block', lineHeight: 1 }}>{value}</span>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#687177', letterSpacing: '0.05em' }}>{unit}</span>
-      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: '#4CAF50', letterSpacing: '0.08em', display: 'block', marginTop: '2px' }}>{label}</span>
+      <span style={{ fontFamily: 'Barlow Condensed', fontSize: '20px', fontWeight: 800, color: 'var(--tg-green)', display: 'block', lineHeight: 1 }}>{value}</span>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-text3)', letterSpacing: '0.05em' }}>{unit}</span>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '7px', color: 'var(--tg-green)', letterSpacing: '0.08em', display: 'block', marginTop: '2px' }}>{label}</span>
     </div>
   )
 }

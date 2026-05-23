@@ -54,7 +54,6 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    // Simula envio — integrar com CRM/WhatsApp API aqui
     await new Promise((r) => setTimeout(r, 1200))
     setLoading(false)
     setSent(true)
@@ -64,9 +63,8 @@ export default function Contact() {
     <section
       id="contato"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ background: '#0A0D0A' }}
+      style={{ background: 'var(--tg-bg0)' }}
     >
-      {/* Grid bg */}
       <div className="absolute inset-0 dashboard-grid opacity-40 pointer-events-none" />
       <div
         className="absolute inset-0 pointer-events-none"
@@ -74,11 +72,10 @@ export default function Contact() {
       />
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
-        {/* Header */}
         <div ref={ref} className="section-fade mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green-strong)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.2em' }}>
               CANAL DIRETO
             </span>
           </div>
@@ -87,22 +84,21 @@ export default function Contact() {
             style={{
               fontFamily: 'Barlow Condensed',
               fontSize: 'clamp(36px, 5vw, 64px)',
-              color: '#F0F0F0',
+              color: 'var(--tg-text0)',
               lineHeight: '0.95',
             }}
           >
             Fale com um
             <br />
-            <span style={{ color: '#4CAF50' }}>Especialista</span>
+            <span style={{ color: 'var(--tg-green)' }}>Especialista</span>
           </h2>
-          <p style={{ color: '#9AA0A6', fontSize: '14px', maxWidth: '480px' }}>
+          <p style={{ color: 'var(--tg-text2)', fontSize: '14px', maxWidth: '480px' }}>
             Nossa equipe técnica analisa sua operação e indica a configuração de frota
             mais eficiente para o seu caso. Sem pitch de vendas — apenas dados e soluções.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* LEFT: Contact info */}
           <div className="flex flex-col gap-5">
             <ContactInfoCard
               icon={MessageSquare}
@@ -129,16 +125,15 @@ export default function Contact() {
               action="Ligar"
             />
 
-            {/* Why contact */}
             <div
               className="p-5 mt-2"
               style={{
-                background: 'rgba(45,90,54,0.08)',
-                border: '1px solid rgba(45,90,54,0.2)',
+                background: 'var(--tg-green-dim)',
+                border: '1px solid var(--tg-border)',
                 borderRadius: '4px',
               }}
             >
-              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '10px' }}>
+              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '10px' }}>
                 O QUE ACONTECE DEPOIS
               </span>
               <div className="flex flex-col gap-2">
@@ -153,9 +148,9 @@ export default function Contact() {
                       style={{
                         fontFamily: 'Space Mono',
                         fontSize: '9px',
-                        color: 'rgba(76,175,80,0.35)',
-                        background: 'rgba(45,90,54,0.15)',
-                        border: '1px solid rgba(45,90,54,0.3)',
+                        color: 'var(--tg-green)',
+                        background: 'var(--tg-green-dim)',
+                        border: '1px solid var(--tg-border)',
                         borderRadius: '2px',
                         width: '18px',
                         height: '18px',
@@ -167,14 +162,13 @@ export default function Contact() {
                     >
                       {i + 1}
                     </span>
-                    <span style={{ fontFamily: 'Barlow', fontSize: '12px', color: '#9AA0A6' }}>{step}</span>
+                    <span style={{ fontFamily: 'Barlow', fontSize: '12px', color: 'var(--tg-text2)' }}>{step}</span>
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* RIGHT: Form */}
           <div className="lg:col-span-2">
             {sent ? (
               <SuccessState onReset={() => { setForm(INITIAL); setSent(false) }} />
@@ -183,13 +177,13 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className="flex flex-col gap-4"
                 style={{
-                  background: 'rgba(18,18,18,0.8)',
-                  border: '1px solid rgba(45,90,54,0.2)',
+                  background: 'var(--tg-bg2)',
+                  border: '1px solid var(--tg-border)',
                   borderRadius: '4px',
                   padding: '32px',
                 }}
               >
-                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', marginBottom: '4px' }}>
+                <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', marginBottom: '4px' }}>
                   FORMULÁRIO DE CONTATO
                 </span>
 
@@ -265,9 +259,9 @@ export default function Contact() {
                   style={{
                     fontFamily: 'Barlow Condensed',
                     letterSpacing: '0.12em',
-                    background: loading ? '#1A3A1A' : 'rgba(76,175,80,0.35)',
-                    color: '#F0F0F0',
-                    border: '1px solid #4CAF50',
+                    background: loading ? 'var(--tg-green-mid)' : 'var(--tg-green-strong)',
+                    color: 'var(--tg-text0)',
+                    border: '1px solid var(--tg-green)',
                     borderRadius: '2px',
                     fontSize: '15px',
                     cursor: loading ? 'wait' : 'pointer',
@@ -286,7 +280,7 @@ export default function Contact() {
                   )}
                 </button>
 
-                <p style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177', textAlign: 'center', letterSpacing: '0.05em' }}>
+                <p style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)', textAlign: 'center', letterSpacing: '0.05em' }}>
                   Seus dados são protegidos e usados apenas para contato técnico.
                   Sem spam, sem cessão a terceiros.
                 </p>
@@ -301,10 +295,10 @@ export default function Contact() {
 
 function FormField({ label, name, type = 'text', value, onChange, placeholder, required }) {
   const style = {
-    background: 'rgba(43,49,58,0.5)',
-    border: '1px solid rgba(104,113,119,0.25)',
+    background: 'var(--tg-bg4)',
+    border: '1px solid var(--tg-border-card)',
     borderRadius: '2px',
-    color: '#F0F0F0',
+    color: 'var(--tg-text0)',
     fontFamily: 'Barlow, sans-serif',
     fontSize: '14px',
     padding: '10px 12px',
@@ -315,7 +309,7 @@ function FormField({ label, name, type = 'text', value, onChange, placeholder, r
 
   return (
     <div className="flex flex-col gap-1.5">
-      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.12em' }}>
+      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.12em' }}>
         {label}
       </label>
       <input
@@ -326,8 +320,8 @@ function FormField({ label, name, type = 'text', value, onChange, placeholder, r
         placeholder={placeholder}
         required={required}
         style={style}
-        onFocus={(e) => { e.target.style.borderColor = 'rgba(76,175,80,0.35)' }}
-        onBlur={(e) => { e.target.style.borderColor = 'rgba(104,113,119,0.25)' }}
+        onFocus={(e) => { e.target.style.borderColor = 'var(--tg-green)' }}
+        onBlur={(e) => { e.target.style.borderColor = 'var(--tg-border-card)' }}
       />
     </div>
   )
@@ -336,7 +330,7 @@ function FormField({ label, name, type = 'text', value, onChange, placeholder, r
 function FormSelect({ label, name, value, onChange, options, required }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.12em' }}>
+      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.12em' }}>
         {label}
       </label>
       <div className="relative">
@@ -346,10 +340,10 @@ function FormSelect({ label, name, value, onChange, options, required }) {
           onChange={onChange}
           required={required}
           style={{
-            background: 'rgba(43,49,58,0.5)',
-            border: '1px solid rgba(104,113,119,0.25)',
+            background: 'var(--tg-bg4)',
+            border: '1px solid var(--tg-border-card)',
             borderRadius: '2px',
-            color: value ? '#F0F0F0' : '#687177',
+            color: value ? 'var(--tg-text0)' : 'var(--tg-text3)',
             fontFamily: 'Barlow, sans-serif',
             fontSize: '14px',
             padding: '10px 32px 10px 12px',
@@ -358,17 +352,17 @@ function FormSelect({ label, name, value, onChange, options, required }) {
             appearance: 'none',
             cursor: 'pointer',
           }}
-          onFocus={(e) => { e.target.style.borderColor = 'rgba(76,175,80,0.35)' }}
-          onBlur={(e) => { e.target.style.borderColor = 'rgba(104,113,119,0.25)' }}
+          onFocus={(e) => { e.target.style.borderColor = 'var(--tg-green)' }}
+          onBlur={(e) => { e.target.style.borderColor = 'var(--tg-border-card)' }}
         >
           <option value="" disabled>Selecione...</option>
           {options.map((o) => (
-            <option key={o} value={o} style={{ background: '#2B313A', color: '#F0F0F0' }}>{o}</option>
+            <option key={o} value={o}>{o}</option>
           ))}
         </select>
         <ChevronDown
           size={14}
-          color="#687177"
+          color="var(--tg-text3)"
           style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}
         />
       </div>
@@ -379,7 +373,7 @@ function FormSelect({ label, name, value, onChange, options, required }) {
 function FormTextarea({ label, name, value, onChange, placeholder }) {
   return (
     <div className="flex flex-col gap-1.5">
-      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.12em' }}>
+      <label style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.12em' }}>
         {label}
       </label>
       <textarea
@@ -389,10 +383,10 @@ function FormTextarea({ label, name, value, onChange, placeholder }) {
         placeholder={placeholder}
         rows={4}
         style={{
-          background: 'rgba(43,49,58,0.5)',
-          border: '1px solid rgba(104,113,119,0.25)',
+          background: 'var(--tg-bg4)',
+          border: '1px solid var(--tg-border-card)',
           borderRadius: '2px',
-          color: '#F0F0F0',
+          color: 'var(--tg-text0)',
           fontFamily: 'Barlow, sans-serif',
           fontSize: '14px',
           padding: '10px 12px',
@@ -402,20 +396,20 @@ function FormTextarea({ label, name, value, onChange, placeholder }) {
           minHeight: '100px',
           transition: 'border-color 0.2s',
         }}
-        onFocus={(e) => { e.target.style.borderColor = 'rgba(76,175,80,0.35)' }}
-        onBlur={(e) => { e.target.style.borderColor = 'rgba(104,113,119,0.25)' }}
+        onFocus={(e) => { e.target.style.borderColor = 'var(--tg-green)' }}
+        onBlur={(e) => { e.target.style.borderColor = 'var(--tg-border-card)' }}
       />
     </div>
   )
 }
 
-function ContactInfoCard({ icon: Icon, title, value, sub, color, action }) {
+function ContactInfoCard({ icon: Icon, title, value, sub, color }) {
   return (
     <div
       className="card-lift flex items-start gap-4 p-4"
       style={{
-        background: 'rgba(18,18,18,0.8)',
-        border: '1px solid rgba(43,49,58,0.6)',
+        background: 'var(--tg-bg2)',
+        border: '1px solid var(--tg-border-card)',
         borderRadius: '4px',
       }}
     >
@@ -430,13 +424,13 @@ function ContactInfoCard({ icon: Icon, title, value, sub, color, action }) {
         <Icon size={18} color={color} />
       </div>
       <div className="flex-1 min-w-0">
-        <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.1em', display: 'block', marginBottom: '2px' }}>
+        <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.1em', display: 'block', marginBottom: '2px' }}>
           {title}
         </span>
-        <span style={{ fontFamily: 'Barlow Condensed', fontSize: '14px', color: '#F0F0F0', fontWeight: 600, display: 'block', wordBreak: 'break-all' }}>
+        <span style={{ fontFamily: 'Barlow Condensed', fontSize: '14px', color: 'var(--tg-text0)', fontWeight: 600, display: 'block', wordBreak: 'break-all' }}>
           {value}
         </span>
-        <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: '#687177', display: 'block', marginTop: '2px' }}>
+        <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)', display: 'block', marginTop: '2px' }}>
           {sub}
         </span>
       </div>
@@ -449,16 +443,16 @@ function SuccessState({ onReset }) {
     <div
       className="flex flex-col items-center justify-center text-center py-20 px-8"
       style={{
-        background: 'rgba(18,18,18,0.8)',
-        border: '1px solid rgba(45,90,54,0.3)',
+        background: 'var(--tg-bg2)',
+        border: '1px solid var(--tg-border)',
         borderRadius: '4px',
       }}
     >
       <div
         className="w-16 h-16 flex items-center justify-center mb-6"
         style={{
-          background: 'rgba(45,90,54,0.15)',
-          border: '1px solid rgba(74,140,86,0.4)',
+          background: 'var(--tg-green-dim)',
+          border: '1px solid var(--tg-border)',
           borderRadius: '50%',
         }}
       >
@@ -466,15 +460,15 @@ function SuccessState({ onReset }) {
       </div>
       <h3
         className="text-2xl font-black uppercase mb-3"
-        style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em' }}
+        style={{ fontFamily: 'Barlow Condensed', color: 'var(--tg-text0)', letterSpacing: '0.05em' }}
       >
         Mensagem enviada
       </h3>
-      <p className="text-sm mb-2" style={{ color: '#9AA0A6', maxWidth: '360px' }}>
+      <p className="text-sm mb-2" style={{ color: 'var(--tg-text2)', maxWidth: '360px' }}>
         Nossa equipe técnica recebeu sua solicitação e entrará em contato
         em até 4 horas úteis com a análise da sua operação.
       </p>
-      <p style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', marginBottom: '24px' }}>
+      <p style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', marginBottom: '24px' }}>
         PROTOCOLO: TG-{Date.now().toString().slice(-8)}
       </p>
       <button
@@ -483,9 +477,9 @@ function SuccessState({ onReset }) {
           fontFamily: 'Barlow Condensed',
           fontSize: '13px',
           letterSpacing: '0.1em',
-          color: '#687177',
+          color: 'var(--tg-text3)',
           background: 'transparent',
-          border: '1px solid rgba(104,113,119,0.3)',
+          border: '1px solid var(--tg-border-card)',
           borderRadius: '2px',
           padding: '8px 20px',
           cursor: 'pointer',

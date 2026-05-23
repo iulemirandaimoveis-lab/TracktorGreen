@@ -156,7 +156,7 @@ export default function Equipment() {
     <section
       id="equipamentos"
       className="relative py-24 lg:py-32"
-      style={{ background: '#0D0D0D' }}
+      style={{ background: 'var(--tg-bg0)' }}
     >
       {/* Brand accent top border */}
       <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '2px', background: 'linear-gradient(to right, transparent, rgba(76,175,80,0.3), transparent)' }} />
@@ -174,8 +174,8 @@ export default function Equipment() {
         {/* Header */}
         <div ref={headerRef} className="section-fade mb-10">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green-strong)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.2em' }}>
               CATÁLOGO OPERACIONAL
             </span>
           </div>
@@ -185,15 +185,15 @@ export default function Equipment() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#F0F0F0',
+                color: 'var(--tg-text0)',
                 lineHeight: '0.95',
               }}
             >
               Frota de
               <br />
-              <span style={{ color: '#4CAF50' }}>Equipamentos</span>
+              <span style={{ color: 'var(--tg-green)' }}>Equipamentos</span>
             </h2>
-            <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
+            <p className="max-w-md text-sm leading-relaxed" style={{ color: 'var(--tg-text2)' }}>
               10 plataformas operacionais projetadas para cobrir toda a cadeia de
               manutenção territorial — do corte ao transporte, da escavação à compactação.
             </p>
@@ -210,9 +210,9 @@ export default function Equipment() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 letterSpacing: '0.1em',
-                background: filter === cat ? '#4CAF50' : 'transparent',
-                color: filter === cat ? '#0A0A0A' : '#687177',
-                border: filter === cat ? '1px solid #4CAF50' : '1px solid rgba(104,113,119,0.25)',
+                background: filter === cat ? 'var(--tg-green)' : 'transparent',
+                color: filter === cat ? 'var(--tg-bg0)' : 'var(--tg-text3)',
+                border: filter === cat ? '1px solid var(--tg-green)' : '1px solid var(--tg-border-card)',
                 borderRadius: '2px',
               }}
             >
@@ -242,10 +242,10 @@ export default function Equipment() {
           }}
         >
           <div>
-            <p className="font-bold text-lg uppercase" style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em' }}>
+            <p className="font-bold text-lg uppercase" style={{ fontFamily: 'Barlow Condensed', color: 'var(--tg-text0)', letterSpacing: '0.05em' }}>
               Precisa de um equipamento específico?
             </p>
-            <p className="text-sm" style={{ color: '#687177' }}>
+            <p className="text-sm" style={{ color: 'var(--tg-text3)' }}>
               Nossa equipe monta a configuração ideal para sua operação.
             </p>
           </div>
@@ -255,15 +255,15 @@ export default function Equipment() {
             style={{
               fontFamily: 'Barlow Condensed',
               letterSpacing: '0.1em',
-              background: '#4CAF50',
-              color: '#0A0A0A',
+              background: 'var(--tg-green)',
+              color: 'var(--tg-bg0)',
               border: 'none',
               borderRadius: '2px',
               fontSize: '13px',
               cursor: 'pointer',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#3d9140' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = '#4CAF50' }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
           >
             Falar com especialista
             <ArrowRight size={14} />
@@ -284,8 +284,8 @@ function EquipmentCard({ eq, onSelect }) {
     <div
       className="card-lift flex flex-col cursor-pointer"
       style={{
-        background: '#141414',
-        border: '1px solid rgba(45,90,54,0.2)',
+        background: 'var(--tg-bg2)',
+        border: '1px solid var(--tg-border)',
         borderRadius: '4px',
         overflow: 'hidden',
       }}
@@ -343,22 +343,22 @@ function EquipmentCard({ eq, onSelect }) {
         <div className="mb-3">
           <span
             className="text-xs uppercase tracking-wider"
-            style={{ fontFamily: 'Space Mono', color: '#687177', fontSize: '9px' }}
+            style={{ fontFamily: 'Space Mono', color: 'var(--tg-text3)', fontSize: '9px' }}
           >
             {eq.category}
           </span>
           <h3
             className="text-xl font-black uppercase mt-0.5"
-            style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em' }}
+            style={{ fontFamily: 'Barlow Condensed', color: 'var(--tg-text0)', letterSpacing: '0.05em' }}
           >
             {eq.name}
           </h3>
-          <p className="text-xs mt-0.5" style={{ color: '#9AA0A6' }}>
+          <p className="text-xs mt-0.5" style={{ color: 'var(--tg-text2)' }}>
             {eq.fullName}
           </p>
         </div>
 
-        <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: '#687177' }}>
+        <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: 'var(--tg-text3)' }}>
           {eq.application}
         </p>
 
@@ -371,9 +371,9 @@ function EquipmentCard({ eq, onSelect }) {
               style={{
                 fontFamily: 'Space Mono',
                 fontSize: '8px',
-                background: 'rgba(43,49,58,0.8)',
-                border: '1px solid rgba(104,113,119,0.2)',
-                color: '#9AA0A6',
+                background: 'var(--tg-bg4)',
+                border: '1px solid var(--tg-border-card)',
+                color: 'var(--tg-text2)',
                 borderRadius: '2px',
                 letterSpacing: '0.05em',
               }}
@@ -387,13 +387,13 @@ function EquipmentCard({ eq, onSelect }) {
         <div
           className="p-3 mb-4"
           style={{
-            background: 'rgba(45,90,54,0.08)',
-            border: '1px solid rgba(45,90,54,0.15)',
+            background: 'var(--tg-green-dim)',
+            border: '1px solid var(--tg-border)',
             borderRadius: '2px',
           }}
         >
-          <p className="text-xs leading-relaxed" style={{ color: '#9AA0A6' }}>
-            <span style={{ color: '#4CAF50', fontFamily: 'Space Mono', fontSize: '8px', letterSpacing: '0.1em' }}>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--tg-text2)' }}>
+            <span style={{ color: 'var(--tg-green)', fontFamily: 'Space Mono', fontSize: '8px', letterSpacing: '0.1em' }}>
               DIFERENCIAL ▸{' '}
             </span>
             {eq.benefit}
@@ -407,12 +407,12 @@ function EquipmentCard({ eq, onSelect }) {
             fontFamily: 'Barlow Condensed',
             letterSpacing: '0.1em',
             background: 'transparent',
-            color: '#4CAF50',
-            border: '1px solid rgba(45,90,54,0.3)',
+            color: 'var(--tg-green)',
+            border: '1px solid var(--tg-border)',
             borderRadius: '2px',
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(45,90,54,0.15)'; e.currentTarget.style.borderColor = '#4CAF50' }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(45,90,54,0.3)' }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--tg-green-dim)'; e.currentTarget.style.borderColor = 'var(--tg-green)' }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'var(--tg-border)' }}
         >
           Ver detalhes
           <ChevronRight size={14} />
@@ -432,8 +432,8 @@ function EquipmentModal({ eq, onClose }) {
       <div
         className="w-full max-w-2xl max-h-[90vh] overflow-y-auto"
         style={{
-          background: '#141414',
-          border: '1px solid rgba(45,90,54,0.4)',
+          background: 'var(--tg-bg2)',
+          border: '1px solid var(--tg-border)',
           borderRadius: '4px',
         }}
         onClick={(e) => e.stopPropagation()}
@@ -450,7 +450,7 @@ function EquipmentModal({ eq, onClose }) {
           <button
             onClick={onClose}
             className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center"
-            style={{ background: 'rgba(18,18,18,0.8)', border: '1px solid rgba(104,113,119,0.4)', borderRadius: '2px', color: '#9AA0A6' }}
+            style={{ background: 'var(--tg-bg2)', border: '1px solid var(--tg-border-card)', borderRadius: '2px', color: 'var(--tg-text2)' }}
           >
             ✕
           </button>
@@ -472,12 +472,12 @@ function EquipmentModal({ eq, onClose }) {
         <div className="p-6">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#687177', letterSpacing: '0.15em' }}>
+              <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-text3)', letterSpacing: '0.15em' }}>
                 {eq.category}
               </span>
               <h3
                 className="text-3xl font-black uppercase"
-                style={{ fontFamily: 'Barlow Condensed', color: '#F0F0F0', letterSpacing: '0.05em' }}
+                style={{ fontFamily: 'Barlow Condensed', color: 'var(--tg-text0)', letterSpacing: '0.05em' }}
               >
                 {eq.name} — {eq.fullName}
               </h3>
@@ -504,7 +504,7 @@ function EquipmentModal({ eq, onClose }) {
           </div>
 
           <div className="mb-6">
-            <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: '#4CAF50', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
+            <span style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', display: 'block', marginBottom: '8px' }}>
               ESPECIFICAÇÕES TÉCNICAS
             </span>
             <div className="flex flex-wrap gap-2">
@@ -515,8 +515,8 @@ function EquipmentModal({ eq, onClose }) {
                   style={{
                     fontFamily: 'Space Mono',
                     fontSize: '10px',
-                    background: 'rgba(43,49,58,0.8)',
-                    border: '1px solid rgba(104,113,119,0.3)',
+                    background: 'var(--tg-bg4)',
+                    border: '1px solid var(--tg-border-card)',
                     color: '#F0F0F0',
                     borderRadius: '2px',
                     letterSpacing: '0.05em',
@@ -534,9 +534,9 @@ function EquipmentModal({ eq, onClose }) {
             style={{
               fontFamily: 'Barlow Condensed',
               letterSpacing: '0.12em',
-              background: 'rgba(76,175,80,0.35)',
-              color: '#F0F0F0',
-              border: '1px solid #4CAF50',
+              background: 'var(--tg-green-strong)',
+              color: 'var(--tg-text0)',
+              border: '1px solid var(--tg-green)',
               borderRadius: '2px',
               fontSize: '14px',
             }}
@@ -555,15 +555,15 @@ function InfoBlock({ label, value, highlight }) {
     <div
       className="p-3"
       style={{
-        background: highlight ? 'rgba(45,90,54,0.08)' : 'rgba(43,49,58,0.4)',
-        border: `1px solid ${highlight ? 'rgba(45,90,54,0.25)' : 'rgba(104,113,119,0.15)'}`,
+        background: highlight ? 'var(--tg-green-dim)' : 'var(--tg-bg4)',
+        border: `1px solid ${highlight ? 'var(--tg-border)' : 'var(--tg-border-card)'}`,
         borderRadius: '2px',
       }}
     >
-      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: highlight ? '#4CAF50' : '#687177', letterSpacing: '0.15em', display: 'block', marginBottom: '6px' }}>
+      <span style={{ fontFamily: 'Space Mono', fontSize: '8px', color: highlight ? 'var(--tg-green)' : 'var(--tg-text3)', letterSpacing: '0.15em', display: 'block', marginBottom: '6px' }}>
         {label}
       </span>
-      <p className="text-xs leading-relaxed" style={{ color: '#9AA0A6' }}>{value}</p>
+      <p className="text-xs leading-relaxed" style={{ color: 'var(--tg-text2)' }}>{value}</p>
     </div>
   )
 }

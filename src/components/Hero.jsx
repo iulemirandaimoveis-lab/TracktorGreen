@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       id="hero"
       className="relative min-h-screen flex flex-col overflow-hidden"
-      style={{ background: '#0A0A0A' }}
+      style={{ background: 'var(--tg-bg0)' }}
     >
       {/* BG image */}
       <div
@@ -39,7 +39,7 @@ export default function Hero() {
       {/* Bottom gradient */}
       <div
         className="absolute bottom-0 left-0 right-0 z-10 h-48"
-        style={{ background: 'linear-gradient(to top, #0A0A0A, transparent)' }}
+        style={{ background: 'linear-gradient(to top, var(--tg-bg0), transparent)' }}
       />
 
       {/* Brand parallelogram accent — top right */}
@@ -110,7 +110,7 @@ export default function Hero() {
               fontFamily: '"Barlow Condensed", "Raleway", sans-serif',
               fontSize: 'clamp(44px, 7.5vw, 96px)',
               fontWeight: 900,
-              color: '#F0F0F0',
+              color: 'var(--tg-text0)',
               lineHeight: '0.92',
               textTransform: 'uppercase',
               letterSpacing: '-0.01em',
@@ -142,7 +142,7 @@ export default function Hero() {
               fontFamily: '"Barlow", sans-serif',
               fontSize: '15px',
               lineHeight: '1.65',
-              color: '#9AA0A6',
+              color: 'var(--tg-text2)',
               maxWidth: '520px',
               marginBottom: '36px',
             }}
@@ -262,7 +262,7 @@ function HeroMetric({ value, label, sub }) {
           fontFamily: '"Barlow Condensed", sans-serif',
           fontSize: '32px',
           fontWeight: 900,
-          color: '#F0F0F0',
+          color: 'var(--tg-text0)',
           lineHeight: 1,
         }}
       >

@@ -1,10 +1,3 @@
-/**
- * Cabeçalho de seção padronizado com a identidade visual TG:
- * — linha verde + tag em Space Mono
- * — título em Barlow Condensed bold
- * — subtexto opcional
- * — barras de track pattern no topo (opcional)
- */
 export default function SectionHeader({
   tag,
   title,
@@ -16,25 +9,21 @@ export default function SectionHeader({
 }) {
   return (
     <div className={`${center ? 'text-center' : ''} ${className}`}>
-      {/* Tag row */}
-      <div
-        className={`flex items-center gap-3 mb-4 ${center ? 'justify-center' : ''}`}
-      >
-        {/* Track accent bars — matches the logo stripes */}
+      <div className={`flex items-center gap-3 mb-4 ${center ? 'justify-center' : ''}`}>
         {!center && (
           <div className="flex flex-col gap-1">
-            <div style={{ width: '32px', height: '2px', background: '#4CAF50' }} />
-            <div style={{ width: '20px', height: '1px', background: 'rgba(76,175,80,0.4)' }} />
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green)' }} />
+            <div style={{ width: '20px', height: '1px', background: 'var(--tg-green-mid)' }} />
           </div>
         )}
         {center && (
-          <div style={{ width: '20px', height: '2px', background: '#4CAF50' }} />
+          <div style={{ width: '20px', height: '2px', background: 'var(--tg-green)' }} />
         )}
         <span
           style={{
             fontFamily: '"Space Mono", monospace',
             fontSize: '10px',
-            color: '#4CAF50',
+            color: 'var(--tg-green)',
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
           }}
@@ -42,17 +31,16 @@ export default function SectionHeader({
           {tag}
         </span>
         {center && (
-          <div style={{ width: '20px', height: '2px', background: '#4CAF50' }} />
+          <div style={{ width: '20px', height: '2px', background: 'var(--tg-green)' }} />
         )}
       </div>
 
-      {/* Headline */}
       <h2
         style={{
           fontFamily: '"Barlow Condensed", "Raleway", sans-serif',
           fontSize: 'clamp(34px, 5vw, 62px)',
           fontWeight: 900,
-          color: '#F0F0F0',
+          color: 'var(--tg-text0)',
           lineHeight: '0.95',
           textTransform: 'uppercase',
           letterSpacing: '-0.01em',
@@ -63,17 +51,16 @@ export default function SectionHeader({
         {titleGreen && (
           <>
             <br />
-            <span style={{ color: '#4CAF50' }}>{titleGreen}</span>
+            <span style={{ color: 'var(--tg-green)' }}>{titleGreen}</span>
           </>
         )}
       </h2>
 
-      {/* Sub text */}
       {sub && (
         <p
           className="mt-5 leading-relaxed"
           style={{
-            color: '#9AA0A6',
+            color: 'var(--tg-text2)',
             fontFamily: '"Barlow", sans-serif',
             fontSize: '14px',
             maxWidth: center ? '520px' : '480px',

@@ -11,9 +11,9 @@ export default function BrandTicker({ inverted = false }) {
     <div
       className="ticker-wrap py-2.5 overflow-hidden"
       style={{
-        background: inverted ? '#4CAF50' : '#1C1C1C',
-        borderTop: inverted ? 'none' : '1px solid rgba(76,175,80,0.2)',
-        borderBottom: inverted ? 'none' : '1px solid rgba(76,175,80,0.2)',
+        background: inverted ? 'var(--tg-green)' : 'var(--tg-ticker-bg)',
+        borderTop: inverted ? 'none' : '1px solid var(--tg-border)',
+        borderBottom: inverted ? 'none' : '1px solid var(--tg-border)',
       }}
     >
       <div className="ticker-inner">
@@ -27,7 +27,7 @@ export default function BrandTicker({ inverted = false }) {
               fontWeight: 700,
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: inverted ? '#1A1A1A' : 'rgba(76,175,80,0.6)',
+              color: inverted ? '#0A0A0A' : 'var(--tg-ticker-color)',
               paddingRight: '0',
             }}
           >

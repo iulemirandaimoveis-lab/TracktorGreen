@@ -18,13 +18,80 @@
   --font-mono: "Space Mono", monospace;
 }
 
+/* ── THEME VARIABLES ── */
+:root {
+  --tg-bg0: #0A0A0A;
+  --tg-bg1: #0F0F0F;
+  --tg-bg2: #141414;
+  --tg-bg3: #1C1C1C;
+  --tg-bg4: rgba(43,49,58,0.5);
+  --tg-text0: #F0F0F0;
+  --tg-text1: #C4C8CC;
+  --tg-text2: #9AA0A6;
+  --tg-text3: #687177;
+  --tg-green: #4CAF50;
+  --tg-green-dim: rgba(76,175,80,0.08);
+  --tg-green-mid: rgba(76,175,80,0.18);
+  --tg-green-strong: rgba(76,175,80,0.35);
+  --tg-border: rgba(76,175,80,0.14);
+  --tg-border-card: rgba(255,255,255,0.06);
+  --tg-orange: #FF8A00;
+  --tg-nav-bg: rgba(10,10,10,0.92);
+  --tg-section-alt: #0C0C0C;
+  --tg-logo-bar: #FFFFFF;
+  --tg-logo-text: #FFFFFF;
+  --tg-logo-green: #4CAF50;
+  --tg-logo-tagline: rgba(255,255,255,0.3);
+  --tg-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  --tg-ticker-bg: #1C1C1C;
+  --tg-ticker-color: rgba(76,175,80,0.55);
+  --tg-transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="light"] {
+  --tg-bg0: #F0F2F0;
+  --tg-bg1: #FAFAFA;
+  --tg-bg2: #FFFFFF;
+  --tg-bg3: #F5F5F5;
+  --tg-bg4: rgba(0,0,0,0.04);
+  --tg-text0: #1A1A1A;
+  --tg-text1: #3A3A3A;
+  --tg-text2: #6A7078;
+  --tg-text3: #9A9EA4;
+  --tg-green: #2E7A1E;
+  --tg-green-dim: rgba(46,122,30,0.07);
+  --tg-green-mid: rgba(46,122,30,0.14);
+  --tg-green-strong: rgba(46,122,30,0.25);
+  --tg-border: rgba(0,0,0,0.09);
+  --tg-border-card: rgba(0,0,0,0.08);
+  --tg-orange: #C85800;
+  --tg-nav-bg: rgba(255,255,255,0.95);
+  --tg-section-alt: #EDEEED;
+  --tg-logo-bar: #1A1A1A;
+  --tg-logo-text: #1A1A1A;
+  --tg-logo-green: #2E7A1E;
+  --tg-logo-tagline: rgba(0,0,0,0.38);
+  --tg-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  --tg-ticker-bg: #E8EAE8;
+  --tg-ticker-color: rgba(46,122,30,0.6);
+}
+
+/* Transition on theme switch */
+*, *::before, *::after {
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+/* but NOT on elements where transition would look bad */
+button, a, [class*="card-lift"], [class*="tg-parallelogram"] {
+  transition: none;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #121212;
-  color: #E6E6EA;
+  background-color: var(--tg-bg0);
+  color: var(--tg-text0);
   font-family: "Barlow", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -182,6 +249,7 @@ body {
   animation: ticker-scroll 28s linear infinite;
 }
 .ticker-inner:hover { animation-play-state: paused; }
+.ticker-inner span { color: var(--tg-ticker-color); }
 
 /* Number count-up */
 @keyframes count-in {

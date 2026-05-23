@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import Logo from './Logo'
+import ThemeToggle from './ThemeToggle'
 
 const NAV_LINKS = [
   { label: 'Início', href: '#hero' },
@@ -51,10 +52,8 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
-        background: scrolled ? 'rgba(10,10,10,0.96)' : 'rgba(10,10,10,0.6)',
-        borderBottom: scrolled
-          ? '1px solid rgba(76,175,80,0.2)'
-          : '1px solid transparent',
+        background: scrolled ? 'var(--tg-nav-bg)' : 'rgba(10,10,10,0.6)',
+        borderBottom: scrolled ? '1px solid var(--tg-border)' : '1px solid transparent',
         backdropFilter: 'blur(14px)',
       }}
     >
@@ -73,7 +72,7 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-5 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <button onClick={() => handleNav('#hero')} className="focus:outline-none flex-shrink-0">
-          <Logo size="sm" theme="dark" />
+          <Logo size="sm" />
         </button>
 
         {/* Desktop nav */}
@@ -91,10 +90,10 @@ export default function Navbar() {
                     fontWeight: 600,
                     letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    color: isActive ? '#4CAF50' : 'rgba(240,240,240,0.55)',
+                    color: isActive ? 'var(--tg-green)' : 'var(--tg-text2)',
                   }}
-                  onMouseEnter={(e) => { if (!isActive) e.currentTarget.style.color = 'rgba(240,240,240,0.9)' }}
-                  onMouseLeave={(e) => { if (!isActive) e.currentTarget.style.color = 'rgba(240,240,240,0.55)' }}
+                  onMouseEnter={(e) => { if (!isActive) e.currentTarget.style.color = 'var(--tg-text0)' }}
+                  onMouseLeave={(e) => { if (!isActive) e.currentTarget.style.color = 'var(--tg-text2)' }}
                 >
                   {link.label}
                   {isActive && (
@@ -105,7 +104,7 @@ export default function Navbar() {
                         left: '12px',
                         right: '12px',
                         height: '2px',
-                        background: '#4CAF50',
+                        background: 'var(--tg-green)',
                         borderRadius: '1px',
                       }}
                     />
@@ -115,6 +114,9 @@ export default function Navbar() {
             )
           })}
         </ul>
+
+        {/* Theme toggle — desktop */}
+        <ThemeToggle className="hidden lg:flex" />
 
         {/* CTA */}
         <button
@@ -155,10 +157,14 @@ export default function Navbar() {
       {open && (
         <div
           style={{
-            background: 'rgba(10,10,10,0.98)',
-            borderTop: '1px solid rgba(76,175,80,0.15)',
+            background: 'var(--tg-bg0)',
+            borderTop: '1px solid var(--tg-border)',
           }}
         >
+          {/* Theme toggle — mobile */}
+          <div className="px-5 pt-3 pb-1">
+            <ThemeToggle />
+          </div>
           <ul className="flex flex-col py-2">
             {NAV_LINKS.map((link) => {
               const isActive = active === link.href
@@ -173,8 +179,8 @@ export default function Navbar() {
                       fontWeight: 600,
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      color: isActive ? '#4CAF50' : '#9AA0A6',
-                      borderLeft: isActive ? '2px solid #4CAF50' : '2px solid transparent',
+                      color: isActive ? 'var(--tg-green)' : 'var(--tg-text2)',
+                      borderLeft: isActive ? '2px solid var(--tg-green)' : '2px solid transparent',
                     }}
                   >
                     {link.label}

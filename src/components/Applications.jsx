@@ -78,9 +78,8 @@ export default function Applications() {
     <section
       id="aplicacoes"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ background: '#0E120E' }}
+      style={{ background: 'var(--tg-section-alt)' }}
     >
-      {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
@@ -89,11 +88,10 @@ export default function Applications() {
       />
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8">
-        {/* Header */}
         <div ref={ref} className="section-fade mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green-strong)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.2em' }}>
               APLICAÇÕES DE CAMPO
             </span>
           </div>
@@ -103,22 +101,21 @@ export default function Applications() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#F0F0F0',
+                color: 'var(--tg-text0)',
                 lineHeight: '0.95',
               }}
             >
               Onde a Tracktor
               <br />
-              <span style={{ color: '#4CAF50' }}>Green opera</span>
+              <span style={{ color: 'var(--tg-green)' }}>Green opera</span>
             </h2>
-            <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
+            <p className="max-w-md text-sm leading-relaxed" style={{ color: 'var(--tg-text2)' }}>
               Do agronegócio à infraestrutura urbana — nossa frota cobre os principais
               ambientes operacionais com eficiência e controle total.
             </p>
           </div>
         </div>
 
-        {/* Applications grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {APPS.map((app, i) => {
             const Icon = app.icon
@@ -127,20 +124,18 @@ export default function Applications() {
                 key={app.title}
                 className="card-lift relative p-6 group"
                 style={{
-                  background: app.highlight ? 'rgba(45,90,54,0.08)' : 'rgba(18,18,18,0.8)',
-                  border: app.highlight ? '1px solid rgba(45,90,54,0.35)' : '1px solid rgba(43,49,58,0.6)',
+                  background: app.highlight ? 'var(--tg-green-dim)' : 'var(--tg-bg2)',
+                  border: app.highlight ? '1px solid var(--tg-green-strong)' : '1px solid var(--tg-border-card)',
                   borderRadius: '4px',
                 }}
               >
-                {/* Number */}
                 <span
                   className="absolute top-3 right-4"
-                  style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'rgba(104,113,119,0.4)' }}
+                  style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)' }}
                 >
                   {String(i + 1).padStart(2, '0')}
                 </span>
 
-                {/* Icon */}
                 <div
                   className="w-10 h-10 flex items-center justify-center mb-5 transition-all duration-300 group-hover:scale-110"
                   style={{
@@ -156,7 +151,7 @@ export default function Applications() {
                   className="text-base font-bold uppercase mb-2"
                   style={{
                     fontFamily: 'Barlow Condensed',
-                    color: '#F0F0F0',
+                    color: 'var(--tg-text0)',
                     letterSpacing: '0.06em',
                     fontSize: '17px',
                   }}
@@ -164,11 +159,10 @@ export default function Applications() {
                   {app.title}
                 </h3>
 
-                <p className="text-xs leading-relaxed mb-4" style={{ color: '#9AA0A6', fontSize: '12px' }}>
+                <p className="text-xs leading-relaxed mb-4" style={{ color: 'var(--tg-text2)', fontSize: '12px' }}>
                   {app.desc}
                 </p>
 
-                {/* Equipment tags */}
                 <div className="flex flex-wrap gap-1">
                   {app.tags.map((t) => (
                     <span
@@ -176,9 +170,9 @@ export default function Applications() {
                       style={{
                         fontFamily: 'Space Mono',
                         fontSize: '8px',
-                        background: 'rgba(43,49,58,0.6)',
-                        border: '1px solid rgba(104,113,119,0.2)',
-                        color: '#687177',
+                        background: 'var(--tg-bg4)',
+                        border: '1px solid var(--tg-border-card)',
+                        color: 'var(--tg-text3)',
                         padding: '2px 6px',
                         borderRadius: '2px',
                         letterSpacing: '0.05em',
@@ -189,7 +183,6 @@ export default function Applications() {
                   ))}
                 </div>
 
-                {/* Bottom line */}
                 <div
                   className="absolute bottom-0 left-0 right-0 h-px transition-all duration-300 group-hover:opacity-100"
                   style={{

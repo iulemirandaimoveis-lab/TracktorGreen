@@ -1,3 +1,4 @@
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import BrandTicker from './components/BrandTicker'
@@ -10,9 +11,9 @@ import Sectors from './components/Sectors'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
-export default function App() {
+function AppContent() {
   return (
-    <div style={{ minHeight: '100vh', background: '#0A0A0A' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--tg-bg0)', transition: 'background 0.25s ease' }}>
       <Navbar />
       <main>
         <Hero />
@@ -28,5 +29,13 @@ export default function App() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   )
 }

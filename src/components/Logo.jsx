@@ -1,100 +1,90 @@
+import { useId } from 'react'
+import { useTheme } from '../context/ThemeContext'
+
 /**
- * TGSymbol — fiel ao brand mark oficial:
- * Paralelogramo inclinado (lean ~15°), fundo escuro, duas barras brancas horizontais,
- * bloco verde sólido no canto inferior-direito.
+ * TGSymbol — exact brand mark
+ * Parallelogram (16° lean) + 2 horizontal bars + green block bottom-right
+ * Transparent background — adapts to any surface
  */
-function TGSymbol({ size = 44 }) {
-  // Viewbox 64×44, paralelogramo: top-left(12,0) top-right(64,0) bot-right(52,44) bot-left(0,44)
-  const h = size * (44 / 64)
+export function TGSymbol({ size = 48, className = '' }) {
+  const { theme } = useTheme()
+  const uid = useId()
+  const clipId = `tg-sym-clip-${uid.replace(/:/g, '')}`
+  const barColor = theme === 'dark' ? '#FFFFFF' : '#1A1A1A'
+  const h = Math.round(size * (48 / 70))
+
   return (
     <svg
       width={size}
       height={h}
-      viewBox="0 0 64 44"
+      viewBox="0 0 70 48"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
     >
       <defs>
-        <clipPath id="tg-sym-clip">
-          <polygon points="12,0 64,0 52,44 0,44" />
+        <clipPath id={clipId}>
+          <polygon points="13,0 70,0 57,48 0,48" />
         </clipPath>
       </defs>
-
-      {/* Background parallelogram — charcoal dark */}
-      <polygon points="12,0 64,0 52,44 0,44" fill="#1A1A1A" />
-
-      <g clipPath="url(#tg-sym-clip)">
-        {/* White bar 1 — top track stripe */}
-        <rect x="-4" y="8" width="80" height="10" fill="#FFFFFF" />
-        {/* White bar 2 — middle track stripe */}
-        <rect x="-4" y="23" width="80" height="10" fill="#FFFFFF" />
-        {/* Green block — bottom-right (territory accent) */}
-        <rect x="30" y="31" width="48" height="22" fill="#4CAF50" />
+      <g clipPath={`url(#${clipId})`}>
+        {/* Bar 1 — upper track */}
+        <rect x="-5" y="8" width="85" height="13" fill={barColor} />
+        {/* Bar 2 — lower track */}
+        <rect x="-5" y="26" width="85" height="13" fill={barColor} />
+        {/* Green territory block — bottom right */}
+        <rect x="32" y="33" width="50" height="22" fill="#4CAF50" />
       </g>
     </svg>
   )
 }
 
 /**
- * Logo — horizontal layout (default) ou stacked.
+ * Logo — complete brand lockup
  * variant: 'horizontal' | 'stacked' | 'symbol'
- * theme: 'dark' (branco+verde no dark bg) | 'light' (preto+verde no light bg) | 'mono-white' | 'mono-black'
  */
-export default function Logo({
-  className = '',
-  size = 'md',
-  variant = 'horizontal',
-  theme = 'dark',
-}) {
+export default function Logo({ className = '', size = 'md', variant = 'horizontal' }) {
+  const { theme } = useTheme()
+
   const cfg = {
-    sm:  { iconSize: 28, title: '18px', sub: '7px',  gap: '8px'  },
-    md:  { iconSize: 36, title: '22px', sub: '8px',  gap: '10px' },
-    lg:  { iconSize: 48, title: '30px', sub: '9px',  gap: '12px' },
-    xl:  { iconSize: 64, title: '40px', sub: '10px', gap: '14px' },
+    xs:  { iconW: 28, title: '16px', sub: '7px',  gap: '8px'  },
+    sm:  { iconW: 34, title: '19px', sub: '7px',  gap: '9px'  },
+    md:  { iconW: 44, title: '24px', sub: '8px',  gap: '11px' },
+    lg:  { iconW: 58, title: '32px', sub: '9px',  gap: '14px' },
+    xl:  { iconW: 72, title: '40px', sub: '10px', gap: '16px' },
   }
   const c = cfg[size] || cfg.md
 
-  const colors = {
-    dark:       { tracktor: '#FFFFFF', green: '#4CAF50', sub: 'rgba(255,255,255,0.35)' },
-    light:      { tracktor: '#1A1A1A', green: '#2D6B2D', sub: 'rgba(0,0,0,0.4)'       },
-    'mono-white': { tracktor: '#FFFFFF', green: '#FFFFFF', sub: 'rgba(255,255,255,0.4)' },
-    'mono-black': { tracktor: '#1A1A1A', green: '#1A1A1A', sub: 'rgba(0,0,0,0.4)'     },
-  }
-  const col = colors[theme] || colors.dark
+  const isDark = theme === 'dark'
+  const textColor = isDark ? '#FFFFFF' : '#1A1A1A'
+  const greenColor = isDark ? '#4CAF50' : '#2E7A1E'
+  const taglineColor = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.38)'
 
-  const textBlock = (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        lineHeight: 1,
-        gap: '1px',
-      }}
-    >
-      {/* TRACKTOR */}
+  const wordmark = (
+    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1, gap: '1px' }}>
       <span
         style={{
           fontFamily: '"Barlow Condensed", "Raleway", sans-serif',
           fontSize: c.title,
           fontWeight: 900,
-          letterSpacing: '0.08em',
+          letterSpacing: '0.06em',
           textTransform: 'uppercase',
-          color: col.tracktor,
+          color: textColor,
           lineHeight: 1,
           display: 'block',
         }}
       >
         TRACKTOR
       </span>
-      {/* GREEN */}
       <span
         style={{
           fontFamily: '"Barlow Condensed", "Raleway", sans-serif',
           fontSize: c.title,
           fontWeight: 900,
-          letterSpacing: '0.18em',
+          letterSpacing: '0.2em',
           textTransform: 'uppercase',
-          color: col.green,
+          color: greenColor,
           lineHeight: 1,
           display: 'block',
           marginTop: '1px',
@@ -102,16 +92,16 @@ export default function Logo({
       >
         GREEN
       </span>
-      {/* Tagline */}
       <span
         style={{
-          fontFamily: '"Space Mono", monospace',
+          fontFamily: '"Raleway", "Barlow", sans-serif',
           fontSize: c.sub,
-          letterSpacing: '0.18em',
+          fontWeight: 400,
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
-          color: col.sub,
+          color: taglineColor,
           display: 'block',
-          marginTop: '4px',
+          marginTop: '5px',
           whiteSpace: 'nowrap',
         }}
       >
@@ -123,31 +113,24 @@ export default function Logo({
   if (variant === 'symbol') {
     return (
       <div className={className}>
-        <TGSymbol size={c.iconSize} />
+        <TGSymbol size={c.iconW} />
       </div>
     )
   }
 
   if (variant === 'stacked') {
     return (
-      <div
-        className={className}
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
-      >
-        <TGSymbol size={c.iconSize} />
-        {textBlock}
+      <div className={className} style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '8px' }}>
+        <TGSymbol size={c.iconW} />
+        {wordmark}
       </div>
     )
   }
 
-  // Default: horizontal
   return (
-    <div
-      className={className}
-      style={{ display: 'flex', alignItems: 'center', gap: c.gap }}
-    >
-      <TGSymbol size={c.iconSize} />
-      {textBlock}
+    <div className={className} style={{ display: 'flex', alignItems: 'center', gap: c.gap }}>
+      <TGSymbol size={c.iconW} />
+      {wordmark}
     </div>
   )
 }

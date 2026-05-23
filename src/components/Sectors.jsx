@@ -28,20 +28,18 @@ export default function Sectors() {
     <section
       id="setores"
       className="relative py-24 lg:py-32 overflow-hidden"
-      style={{ background: '#0E120E' }}
+      style={{ background: 'var(--tg-section-alt)' }}
     >
-      {/* Gradient bg */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{ background: 'radial-gradient(ellipse at 20% 80%, rgba(45,90,54,0.08) 0%, transparent 60%)' }}
       />
 
       <div className="max-w-7xl mx-auto px-5 lg:px-8 relative">
-        {/* Header */}
         <div ref={ref} className="section-fade mb-12">
           <div className="flex items-center gap-3 mb-4">
-            <div style={{ width: '32px', height: '2px', background: 'rgba(76,175,80,0.35)' }} />
-            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: '#4CAF50', letterSpacing: '0.2em' }}>
+            <div style={{ width: '32px', height: '2px', background: 'var(--tg-green-strong)' }} />
+            <span style={{ fontFamily: 'Space Mono', fontSize: '10px', color: 'var(--tg-green)', letterSpacing: '0.2em' }}>
               MERCADOS ATENDIDOS
             </span>
           </div>
@@ -51,22 +49,21 @@ export default function Sectors() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: 'clamp(36px, 5vw, 64px)',
-                color: '#F0F0F0',
+                color: 'var(--tg-text0)',
                 lineHeight: '0.95',
               }}
             >
               Setores
               <br />
-              <span style={{ color: '#4CAF50' }}>Atendidos</span>
+              <span style={{ color: 'var(--tg-green)' }}>Atendidos</span>
             </h2>
-            <p className="max-w-md text-sm leading-relaxed" style={{ color: '#9AA0A6' }}>
+            <p className="max-w-md text-sm leading-relaxed" style={{ color: 'var(--tg-text2)' }}>
               Do campo à cidade, da geração de energia à logística industrial —
               a TRACKTOR GREEN opera onde a manutenção territorial é crítica.
             </p>
           </div>
         </div>
 
-        {/* Sectors grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {SECTORS.map((s, i) => {
             const Icon = s.icon
@@ -75,8 +72,8 @@ export default function Sectors() {
                 key={s.label}
                 className="card-lift group p-5 flex flex-col items-center text-center cursor-default"
                 style={{
-                  background: 'rgba(18,18,18,0.8)',
-                  border: '1px solid rgba(43,49,58,0.6)',
+                  background: 'var(--tg-bg2)',
+                  border: '1px solid var(--tg-border-card)',
                   borderRadius: '4px',
                 }}
               >
@@ -96,21 +93,20 @@ export default function Sectors() {
                   style={{
                     fontFamily: 'Barlow Condensed',
                     fontSize: '15px',
-                    color: '#F0F0F0',
+                    color: 'var(--tg-text0)',
                     letterSpacing: '0.05em',
                   }}
                 >
                   {s.label}
                 </h3>
 
-                <p style={{ color: '#687177', fontSize: '11px', lineHeight: '1.5' }}>
+                <p style={{ color: 'var(--tg-text3)', fontSize: '11px', lineHeight: '1.5' }}>
                   {s.desc}
                 </p>
 
-                {/* Sector index */}
                 <span
                   className="mt-3"
-                  style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'rgba(104,113,119,0.3)' }}
+                  style={{ fontFamily: 'Space Mono', fontSize: '8px', color: 'var(--tg-text3)' }}
                 >
                   S{String(i + 1).padStart(2, '0')}
                 </span>
@@ -119,12 +115,11 @@ export default function Sectors() {
           })}
         </div>
 
-        {/* Bottom full-width banner */}
         <div
           className="mt-10 p-8 flex flex-col lg:flex-row items-center justify-between gap-6"
           style={{
-            background: 'linear-gradient(135deg, rgba(30,58,36,0.5) 0%, rgba(43,49,58,0.4) 100%)',
-            border: '1px solid rgba(45,90,54,0.3)',
+            background: 'var(--tg-green-dim)',
+            border: '1px solid var(--tg-border)',
             borderRadius: '4px',
           }}
         >
@@ -134,13 +129,13 @@ export default function Sectors() {
               style={{
                 fontFamily: 'Barlow Condensed',
                 fontSize: '28px',
-                color: '#F0F0F0',
+                color: 'var(--tg-text0)',
                 letterSpacing: '0.05em',
               }}
             >
               Seu setor não está na lista?
             </p>
-            <p style={{ color: '#9AA0A6', fontSize: '14px' }}>
+            <p style={{ color: 'var(--tg-text2)', fontSize: '14px' }}>
               A TRACKTOR GREEN desenvolve soluções customizadas para operações específicas.
               Fale com nossa equipe técnica.
             </p>
@@ -151,14 +146,15 @@ export default function Sectors() {
             style={{
               fontFamily: 'Barlow Condensed',
               letterSpacing: '0.12em',
-              background: 'rgba(76,175,80,0.35)',
-              color: '#F0F0F0',
-              border: '1px solid #4CAF50',
+              background: 'var(--tg-green-strong)',
+              color: 'var(--tg-text0)',
+              border: '1px solid var(--tg-green)',
               borderRadius: '2px',
               fontSize: '14px',
+              cursor: 'pointer',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.background = '#1A3A1A' }}
-            onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(76,175,80,0.35)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--tg-green-mid)' }}
+            onMouseLeave={(e) => { e.currentTarget.style.background = 'var(--tg-green-strong)' }}
           >
             Consultar Especialista
           </button>
