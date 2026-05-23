@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import {
-  Wifi, Thermometer, Zap, AlertTriangle,
-  Activity, MapPin, Settings, BarChart3,
+  Wifi, AlertTriangle,
+  Activity, MapPin, BarChart3,
   CheckCircle2, Clock, Fuel, Wrench
 } from 'lucide-react'
 
@@ -23,7 +23,7 @@ const ALERTS = [
 
 export default function Telemetry() {
   const ref = useRef(null)
-  const [tick, setTick] = useState(0)
+  const [, setTick] = useState(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -190,7 +190,7 @@ export default function Telemetry() {
                   </span>
                   <MapPin size={10} color="var(--tg-green)" />
                 </div>
-                <MapDisplay tick={tick} />
+                <MapDisplay />
               </div>
 
               <div>
@@ -322,7 +322,7 @@ function FleetRow({ unit }) {
   )
 }
 
-function MapDisplay({ tick }) {
+function MapDisplay() {
   const units = [
     { x: 55, y: 35, status: 'online', model: 'SAG600' },
     { x: 35, y: 60, status: 'online', model: 'SE-35' },

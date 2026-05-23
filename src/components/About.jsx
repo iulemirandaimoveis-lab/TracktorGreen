@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { MapPin, Cpu, Crosshair, Leaf, Shield } from 'lucide-react'
 import SectionHeader from './SectionHeader'
-import Logo from './Logo'
 
 const PILLARS = [
   {
