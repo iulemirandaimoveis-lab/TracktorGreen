@@ -4,11 +4,10 @@
       <polygon points="13,0 70,0 57,48 0,48"/>
     </clipPath>
   </defs>
-  <!-- Dark bg so bars are visible as white at small sizes -->
-  <polygon points="13,0 70,0 57,48 0,48" fill="#1A1A1A"/>
+  <polygon points="13,0 70,0 57,48 0,48" fill="#FFFFFF"/>
   <g clip-path="url(#c)">
-    <rect x="-5" y="8" width="85" height="13" fill="#FFFFFF"/>
-    <rect x="-5" y="26" width="85" height="13" fill="#FFFFFF"/>
+    <rect x="-5" y="8" width="85" height="13" fill="#1A1A1A"/>
+    <rect x="-5" y="26" width="85" height="13" fill="#1A1A1A"/>
     <rect x="32" y="33" width="50" height="22" fill="#4CAF50"/>
   </g>
 </svg>
