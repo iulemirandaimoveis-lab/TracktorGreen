@@ -1,5 +1,4 @@
-import { ChevronDown, Zap, ArrowRight, MapPin, Wifi, Thermometer } from 'lucide-react'
-import Logo from './Logo'
+import { ChevronDown, Zap, ArrowRight, MapPin } from 'lucide-react'
 
 export default function Hero() {
   const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })

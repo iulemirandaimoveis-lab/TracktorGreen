@@ -439,6 +439,7 @@ function ContactInfoCard({ icon: Icon, title, value, sub, color }) {
 }
 
 function SuccessState({ onReset }) {
+  const [protocol] = useState(() => Date.now().toString().slice(-8))
   return (
     <div
       className="flex flex-col items-center justify-center text-center py-20 px-8"
@@ -469,7 +470,7 @@ function SuccessState({ onReset }) {
         em até 4 horas úteis com a análise da sua operação.
       </p>
       <p style={{ fontFamily: 'Space Mono', fontSize: '9px', color: 'var(--tg-green)', letterSpacing: '0.15em', marginBottom: '24px' }}>
-        PROTOCOLO: TG-{Date.now().toString().slice(-8)}
+        PROTOCOLO: TG-{protocol}
       </p>
       <button
         onClick={onReset}
